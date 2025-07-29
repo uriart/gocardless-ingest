@@ -10,7 +10,7 @@ RUN go mod download
 COPY . .
 
 # Compilar el binario
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o app ./cmd/main.go
+RUN CGO_ENABLED=0 go build -o app ./cmd/main.go
 
 # Etapa 2: imagen final
 FROM alpine:latest
